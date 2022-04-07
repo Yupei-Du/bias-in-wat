@@ -164,6 +164,7 @@ def build_graph(processed_data):
             response_id = vocab_dict[response]
             # calculate weights
             adjacency_matrix[cue_id][response_id] += processed_data[cue][response]
+            adjacency_matrix[response_id][cue_id] += processed_data[cue][response]
 
     return vocab_dict, initial_matrix, adjacency_matrix
 
